@@ -28,10 +28,14 @@ pipeline {
           cd cat && make
           cd ../grep && make
           echo "-------------BUILD ENDED------------"
+          cd ..
           pwd
           ls
-          if [[ ! -f cat/s21_cat || ! -f grep/s21_grep ]]; then
-            echo "files does't exist"
+          if [[ ! -f cat/s21_cat ]]; then
+            echo "file s21_cat don't exist"
+            exit 1
+          elif [[ ! -f grep/s21_grep ]]; then
+            echo "file s21_grep don't exist"
             exit 1
           fi
         '''
