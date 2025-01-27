@@ -48,8 +48,8 @@ pipeline {
       steps {
         sh '''
           echo "-------------DEPLOY STARTED------------"
-          scp cat/s21_cat root@172.18.0.3:root/CICD/ || { echo "failed to deploy s21_cat"; exit 1; }
-          scp grep/s21_grep root@172.18.0.3:root/CICD/ || { echo "failed to deploy s21_grep"; exit 1; }
+          scp cat/s21_cat root@172.18.0.3:/root/CICD/ || { echo "failed to deploy s21_cat"; exit 1; }
+          scp grep/s21_grep root@172.18.0.3:/root/CICD/ || { echo "failed to deploy s21_grep"; exit 1; }
           echo "-------------DEPLOY ENDED------------"
         '''  
       }
