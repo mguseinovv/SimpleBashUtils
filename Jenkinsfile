@@ -11,6 +11,7 @@ pipeline {
         sh '''
           set -e
           echo "-------------CODESTYLE TEST STARTED------------"
+          clang-format -i cat/* grep/*
           if ! clang-format -n cat/* grep/*; then
             echo "code style failed"
             exit 1
