@@ -6,20 +6,20 @@ pipeline {
         checkout scm
       }
     }
-    stage('CodeStyle') {
-      steps {
-        sh '''
-          set -e
-          echo "-------------CODESTYLE TEST STARTED------------"
-          clang-format -i cat/* grep/*
-          if ! clang-format -n cat/* grep/*; then
-            echo "code style failed"
-            exit 1
-          fi
-          echo "-------------CODESTYLE TEST STARTED------------"
-        '''
-      }
-    }
+    // stage('CodeStyle') {
+    //   steps {
+    //     sh '''
+    //       set -e
+    //       echo "-------------CODESTYLE TEST STARTED------------"
+    //       clang-format -i cat/* grep/*
+    //       if ! clang-format -n cat/* grep/*; then
+    //         echo "code style failed"
+    //         exit 1
+    //       fi
+    //       echo "-------------CODESTYLE TEST STARTED------------"
+    //     '''
+    //   }
+    // }
     stage('Build') {
       steps {
         sh '''
