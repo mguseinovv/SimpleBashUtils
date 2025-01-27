@@ -45,13 +45,13 @@ pipeline {
         '''  
       }
     }
-    post {
-      failure {
-        echo "pipeline failed"
-      }
-      success {
-        echo "sorry che-to ya zasolil"
-      }
+  }
+  post {
+    failure {
+      echo "pipeline failed"
+    }
+    success {
+      echo "sorry che-to ya zasolil"
     }
   }
 }
