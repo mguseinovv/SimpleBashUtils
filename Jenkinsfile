@@ -27,10 +27,11 @@ pipeline {
           echo "-------------BUILD STARTED------------"
           cd cat && make
           cd ../grep && make
-          echo "-------------BUILD ENDED------------"
           cd ..
           pwd
           ls
+          ls cat/
+          ls grep/
           if [[ ! -f cat/s21_cat ]]; then
             echo "file s21_cat don't exist"
             exit 1
@@ -38,6 +39,7 @@ pipeline {
             echo "file s21_grep don't exist"
             exit 1
           fi
+          echo "-------------BUILD ENDED------------"
         '''
         archiveArtifacts artifacts: 'cat/s21_cat, grep/s21_grep', fingerprint: true
       }
