@@ -21,12 +21,12 @@ pipeline {
     }
     stage('Build') {
       steps {
-        set -e
-        sh 'echo "-------------BUILD STARTED------------"'
-        sh 'cd cat && make'
-        sh 'cd ../grep && make'
-        sh 'echo "-------------BUILD ENDED------------"'
         sh '''
+          set -e
+          echo "-------------BUILD STARTED------------"
+          cd cat && make
+          cd ../grep && make
+          echo "-------------BUILD ENDED------------"
           if [[ ! -f cat/s21_cat || ! -f grep/s21_grep ]]; then
             echo "files does't exist"
             exit 1
