@@ -32,10 +32,10 @@ pipeline {
           ls
           ls cat/
           ls grep/
-          if [[ ! -f cat/s21_cat ]]; then
+          if [ ! -f cat/s21_cat ]; then
             echo "file s21_cat don't exist"
             exit 1
-          elif [[ ! -f grep/s21_grep ]]; then
+          elif [ ! -f grep/s21_grep ]; then
             echo "file s21_grep don't exist"
             exit 1
           fi
